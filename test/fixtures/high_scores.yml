@@ -4,10 +4,12 @@ one:
   first_name: MyString
   last_name: MyString
   email: MyString
-  high_score: 9.99
+  high_score: 1.5
+  dublinese_name: MyString
 
 two:
   first_name: MyString
   last_name: MyString
   email: MyString
-  high_score: 9.99
+  high_score: 1.5
+  dublinese_name: MyString
