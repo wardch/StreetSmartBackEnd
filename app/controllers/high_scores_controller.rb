@@ -15,14 +15,14 @@ class HighScoresController < ApplicationController
     render json: highscore
   end
 
-  def destroy
-    highscore = HighScore.find(params[:id])
-    highscore.destroy
-    head :no_content, status: :ok
+  def rank
+    high_score = highscore_param['high_score']
+    new_ranking = HighScore.where('high_score > ?', high_score).count + 1
+    render json: new_ranking
   end
 
   private
-    def highscore_param
-      params.require(:highscore).permit(:first_name, :last_name, :high_score, :email, :dublinese_name)
-    end
+  def highscore_param
+    params.require(:high_score).permit(:first_name, :last_name, :email, :dublinese_name, :high_score)
+  end
 end
