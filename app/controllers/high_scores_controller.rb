@@ -1,6 +1,6 @@
 class HighScoresController < ApplicationController
   def index
-    high_scores = HighScore.order("high_score DESC").page(params[:page] || 1).per(1)
+    high_scores = HighScore.order("high_score DESC").page(params[:page] || 1).per(100)
     high_score_data = {high_scores: high_scores, total_pages: high_scores.total_pages}
     render json: high_score_data
   end
