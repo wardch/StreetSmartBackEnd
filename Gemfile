@@ -30,6 +30,8 @@ gem 'puma', '~> 3.7'
 
 gem 'yarn'
 
+gem 'kaminari'
+
 gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
