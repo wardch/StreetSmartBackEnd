@@ -18,7 +18,7 @@ class HighScoresController < ApplicationController
 
   def rank
     high_score = highscore_param['high_score']
-    new_ranking = HighScore.where('high_score > ?', high_score).count + 1
+    new_ranking = HighScore.where('high_score::decimal > ?', high_score.to_f).count + 1
     render json: new_ranking
   end
 
