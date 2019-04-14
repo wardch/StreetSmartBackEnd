@@ -7,8 +7,8 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    #TODO: Change this to only be from the front end app. 
-    origins '*'
+    #TODO: Change this to only be from the front end app.
+    origins 'https://street-smart-dublin.herokuapp.com'
 
     resource '*',
       headers: :any,
